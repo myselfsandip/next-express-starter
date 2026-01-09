@@ -1,3 +1,3 @@
-export const COMPANY_NAME = "Yours Home Properties";
+export const COMPANY_NAME = "Your Company Name";
 
-export const CURRENCY_ICON = "DHS";
+export const CURRENCY_ICON = "YCN";
