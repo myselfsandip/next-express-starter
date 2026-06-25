@@ -1,4 +1,4 @@
-import jwt, { JwtPayload } from "jsonwebtoken";
+import jwt, { type JwtPayload } from "jsonwebtoken";
 import { Env } from "../config/env.config.js";
 
 export const generateAccessToken = (userId: string) => {
@@ -17,3 +17,4 @@ export const verifyAccessToken = (token: string): JwtPayload => {
 export const verifyRefreshToken = (token: string): JwtPayload => {
     return jwt.verify(token, Env.JWT_REFRESH_SECRET) as JwtPayload;
 }
+

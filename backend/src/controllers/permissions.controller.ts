@@ -1,18 +1,18 @@
-import { Request, Response } from "express";
-import { asyncHandler } from "../config/asyncHandler";
-import { HTTPSTATUS } from "../config/http.config";
+import type { Request, Response } from "express";
+import { asyncHandler } from "../config/asyncHandler.js";
+import { HTTPSTATUS } from "../config/http.config.js";
 import {
     upsertRolePermissionsSchema,
     getRolePermissionsParamsSchema,
     setUserPermissionsSchema,
     getUserPermissionsParamsSchema,
-} from "../validators/permissions.validator";
+} from "../validators/permissions.validator.js";
 import {
     upsertRolePermissions,
     getRolePermissions,
     setUserPermissions,
     getUserPermissions,
-} from "../services/permisstion.service";
+} from "../services/permisstion.service.js";
 
 export const upsertRolePermissionsController = asyncHandler(
     async (req: Request, res: Response) => {

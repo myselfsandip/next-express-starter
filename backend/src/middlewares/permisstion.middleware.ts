@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
+import type { Request, Response, NextFunction } from 'express';
 import { checkPermission } from '../services/permisstion.service.js';
-import { Action, Module, STATIC_ROLES } from '../constants/permissions.js';
+import { type Action, type Module, STATIC_ROLES } from '../constants/permissions.js';
 import { AppError, ForbiddenException, UnauthorizedException } from '../utils/app-error.js';
 import { asyncHandler } from '../config/asyncHandler.js';
 import { ErrorCodeEnum } from '../utils/error-code.enum.js';

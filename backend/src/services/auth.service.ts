@@ -1,11 +1,11 @@
-import { db } from "../db/index";
-import { users } from "../db/schema";
+import { db } from "../db/index.js";
+import { users } from "../db/schema.js";
 import { and, eq } from "drizzle-orm";
-import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from "../utils/jwtTokens";
-import { BadRequestException, UnauthorizedException } from "../utils/app-error";
-import { ErrorCodeEnum } from "../utils/error-code.enum";
-import { LoginSchemaType, RegisterSchemaType } from "../validators/auth.validator";
-import { comparePassword, hashPassword } from "../utils/helper";
+import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from "../utils/jwtTokens.js";
+import { BadRequestException, UnauthorizedException } from "../utils/app-error.js";
+import { ErrorCodeEnum } from "../utils/error-code.enum.js";
+import { type LoginSchemaType, type RegisterSchemaType } from "../validators/auth.validator.js";
+import { comparePassword, hashPassword } from "../utils/helper.js";
 
 
 export const registerUser = async (data: RegisterSchemaType) => {

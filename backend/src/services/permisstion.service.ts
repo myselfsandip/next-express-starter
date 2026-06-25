@@ -1,9 +1,9 @@
-import { UserId } from '../@types/index.js';
-import { Action, Module, Scope, SCOPES } from '../constants/permissions.js';
+import type { UserId } from '../@types/index.js';
+import { type Action, type Module, type Scope, SCOPES } from '../constants/permissions.js';
 import { db } from '../db/index.js';
 import { rolePermissions, userPermissions, users } from '../db/schema.js';
 import { and, eq } from 'drizzle-orm';
-import { SetUserPermissionsSchemaType, UpsertRolePermissionsSchemaType } from '../validators/permissions.validator.js';
+import { type SetUserPermissionsSchemaType, type UpsertRolePermissionsSchemaType } from '../validators/permissions.validator.js';
 import { logger } from '../config/winston.js';
 
 export const checkPermission = async (

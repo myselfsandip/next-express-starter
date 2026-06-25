@@ -4,7 +4,7 @@ import {
     getRolePermissionsController,
     setUserPermissionsController,
     getUserPermissionsController,
-} from "../controllers/permissions.controller";
+} from "../controllers/permissions.controller.js";
 
 const router = Router();
 

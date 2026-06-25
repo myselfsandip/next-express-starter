@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ACTIONS, MODULES, SCOPES } from "../constants/permissions";
+import { ACTIONS, MODULES, SCOPES } from "../constants/permissions.js";
 
 export const moduleEnum = z.nativeEnum(MODULES);
 export const actionEnum = z.nativeEnum(ACTIONS);

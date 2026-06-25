@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { optionalString } from "./base";
+import { optionalString } from "./base.js";
 
 export const createRoleSchema = z.object({
     name: z.string().min(1, "Role name is required"),

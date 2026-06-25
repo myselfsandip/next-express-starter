@@ -1,8 +1,8 @@
-import { Env } from "../config/env.config";
-import { InternalServerException } from "../utils/app-error"
-import { ErrorCodeEnum } from "../utils/error-code.enum"
-import { createTransporter } from "./mailer";
-import { empCredentialsEmailTemplate } from "./templates/credentials.template";
+import { Env } from "../config/env.config.js";
+import { InternalServerException } from "../utils/app-error.js"
+import { ErrorCodeEnum } from "../utils/error-code.enum.js"
+import { createTransporter } from "./mailer.js";
+import { empCredentialsEmailTemplate } from "./templates/credentials.template.js";
 
 interface CredentialsEmail {
     name: string;

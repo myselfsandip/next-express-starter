@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
-import { db } from "../db";
-import { roles } from "../db/schema";
-import { createRoleSchemaType, updateRoleSchemaType } from "../validators/roles.validator";
+import { db } from "../db/index.js";
+import { roles } from "../db/schema.js";
+import { type createRoleSchemaType, type updateRoleSchemaType } from "../validators/roles.validator.js";
 
 
 export const createRole = async (data: createRoleSchemaType) => {

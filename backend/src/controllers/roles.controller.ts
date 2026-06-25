@@ -1,11 +1,11 @@
-import { Request, Response } from "express";
-import { asyncHandler } from "../config/asyncHandler";
-import { createRoleSchema, updateRoleSchema } from "../validators/roles.validator";
-import { createRole, getAllRoles, getRoleById, updateRole } from "../services/roles.service";
-import { HTTPSTATUS } from "../config/http.config";
-import { logger } from "../config/winston";
-import { STATIC_ROLES } from "../constants/permissions";
-import { ForbiddenException } from "../utils/app-error";
+import type { Request, Response } from "express";
+import { asyncHandler } from "../config/asyncHandler.js";
+import { createRoleSchema, updateRoleSchema } from "../validators/roles.validator.js";
+import { createRole, getAllRoles, getRoleById, updateRole } from "../services/roles.service.js";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { logger } from "../config/winston.js";
+import { STATIC_ROLES } from "../constants/permissions.js";
+import { ForbiddenException } from "../utils/app-error.js";
 
 
 

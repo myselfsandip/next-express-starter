@@ -1,6 +1,5 @@
-import { Response } from "express";
+import type { Response, ErrorRequestHandler } from "express";
 import { z, ZodError } from "zod";
-import { ErrorRequestHandler } from "express";
 import { HTTPSTATUS } from "../config/http.config.js";
 import { AppError } from "../utils/app-error.js";
 import { ErrorCodeEnum } from "../utils/error-code.enum.js";
@@ -44,7 +43,7 @@ export const errorHandler: ErrorRequestHandler = (
         path: req.path,
         method: req.method,
         error: error.message,
-        stack: error.stack 
+        stack: error.stack
     });
 
     if (error instanceof ZodError) {

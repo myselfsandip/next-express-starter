@@ -1,9 +1,9 @@
-import { Request, Response } from "express";
-import { asyncHandler } from "../config/asyncHandler";
+import { asyncHandler } from "../config/asyncHandler.js";
 import { registerSchema, loginSchema } from "../validators/auth.validator.js";
 import * as authService from "../services/auth.service.js";
 import { HTTPSTATUS } from "../config/http.config.js";
-import { getUserPermissions } from "../services/permisstion.service";
+import { getUserPermissions } from "../services/permisstion.service.js";
+import type { Request, Response } from "express";
 
 export const registerController = asyncHandler(
     async (req: Request, res: Response) => {
@@ -70,7 +70,7 @@ export const profileController = asyncHandler(
 
         const { refreshToken, password, ...userProfile } = user;
 
-        const {effective} = await getUserPermissions(user?.id);
+        const { effective } = await getUserPermissions(user?.id);
 
         res.status(HTTPSTATUS.OK).json({
             message: "Profile fetched successfully",

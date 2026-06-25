@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { Env } from "../config/env.config";
+import { Env } from "../config/env.config.js";
 
 export const createTransporter = () => {
     if (!Env.NODEMAILER_EMAIL || !Env.NODEMAILER_PASSWORD) {
