@@ -15,10 +15,25 @@ const app = express();
 const server = http.createServer(app);
 
 
-app.use(cors({
-    origin: Env.FRONTEND_ORIGIN,
-    credentials: true
-}));
+app.set("trust proxy", 1);
+
+
+const allowedOrigins = (Env.FRONTEND_ORIGIN ?? "http://localhost:3000")
+    .split(",")
+    .map((o) => o.trim())
+    .filter(Boolean);
+
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            if (!origin || allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+            return callback(new Error("Not allowed by CORS"));
+        },
+        credentials: true,
+    })
+);
 
 app.use(helmet()); // Add security headers
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
